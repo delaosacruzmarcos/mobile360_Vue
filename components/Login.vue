@@ -1,39 +1,63 @@
 <template>
-        <form @submit="changePage">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <button type="submit" class="btn btn-success">Sign in</button>
-          <p>
-              <small>
-                  Don't have an account yet?
-              </small>
-              <small style="color:green" class="clickable" @click="register">Register here</small>
-          </p>
-        </form>
+  <View class="container">
+    <view>
+      <text>Email Address</text>
+    </view>
+    <text-input
+      :style="{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }"
+      v-model="username"
+    />
+    <view>
+      <text>Password</text>
+    </view>
+    <text-input
+      :style="{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }"
+      v-model="password"
+    />
+    <button
+      :on-press="signIn"
+      title="Sign in"
+      color="green"
+      accessibility-label="Click here to Sign In"
+    />
+    <view>
+      <text>Don't have an account yet?</text>
+    </view>
+    <button
+      :on-press="register"
+      title="Register here"
+      color="green"
+      accessibility-label="Click here to Register"
+    />
+  </View>
 </template>
 
 <script>
 export default {
-    name:'Login',
-    methods:{
-        register(){
-            this.$emit('register')
-        },
-        changePage(){
-            this.$emit('changepage')
-        }
-    }
-}
+  data: function () {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    signIn: function () {
+      alert("Sign in pressed");
+    },
+    register: function () {
+      alert("Register pressed, navigating to register page");
+    },
+  },
+};
 </script>
 
-<style scoped>
-.clickable{
-    cursor: pointer;
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
 }
+/* .text-container {
+  flex: 1;
+} */
 </style>
