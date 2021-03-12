@@ -21,6 +21,7 @@
     "vue": "^3.0.0",
     "vue-native-core": "^0.2.0",
     "vue-native-helper": "^0.2.0",
+    "vue-native-router": "^0.2.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

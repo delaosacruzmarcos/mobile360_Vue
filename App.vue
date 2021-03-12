@@ -20,6 +20,7 @@
 <script>
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Home from "./views/Home"
 
 export default {
   name: "App",
@@ -42,6 +43,9 @@ export default {
     },
     signin() {
       this.which = Login;
+    },
+    home(){
+      this.which = this.home;
     },
   },
 };

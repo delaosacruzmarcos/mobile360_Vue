@@ -43,7 +43,13 @@
 </template>
 
 <script>
+
 export default {
+  props: {
+    navigation:{
+      type: Object
+    }
+  },
   data: function () {
     return {
       firstName: "",
@@ -61,6 +67,8 @@ export default {
     },
     signin: function () {
       this.$emit("signin");
+      this.navigation.navigate("Home")
+      
     },
   },
 };

@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import HomeVue from '../views/Home.vue';
 export default {
   data: function () {
     return {
