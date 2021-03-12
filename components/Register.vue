@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     register: function () {
-      alert("Register pressed");
+      this.$emit("changepage");
     },
     signin: function () {
       this.$emit("signin");
