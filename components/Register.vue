@@ -3,33 +3,27 @@
     <view>
       <text>First Name</text>
     </view>
-    <text-input class="textField" v-model="firstName"
-    />
+    <text-input class="textField" v-model="firstName" />
     <view>
       <text>Last Name</text>
     </view>
-    <text-input class="textField" v-model="lastName"
-    />
+    <text-input class="textField" v-model="lastName" />
     <view>
       <text>Email Address</text>
     </view>
-    <text-input class="textField" v-model="emailAddress"
-    />
+    <text-input class="textField" v-model="emailAddress" />
     <view>
       <text>Password</text>
     </view>
-    <text-input class="textField" v-model="password"
-    />
+    <text-input class="textField" v-model="password" />
     <view>
       <text>Confirm Password</text>
     </view>
-    <text-input class="textField" v-model="confirmPassword"
-    />
+    <text-input class="textField" v-model="confirmPassword" />
     <view>
       <text>Date Of Birth</text>
     </view>
-    <text-input class="textField" v-model="dateOfBirth"
-    />
+    <text-input class="textField" v-model="dateOfBirth" />
     <button
       :on-press="register"
       title="Register"
@@ -66,7 +60,6 @@ export default {
       alert("Register pressed");
     },
     signin: function () {
-      //Sign in pressed, navigating back to sign in page
       this.$emit("signin");
     },
   },
@@ -80,9 +73,9 @@ export default {
   justify-content: center;
 }
 .textField {
-    height: 40;
-    width: 300;
-    border-color: gray;
-    border-width: 1;
+  height: 40;
+  width: 300;
+  border-color: gray;
+  border-width: 1;
 }
 </style>
