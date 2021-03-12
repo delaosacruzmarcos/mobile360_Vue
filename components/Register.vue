@@ -1,85 +1,88 @@
 <template>
-  <form @submit="goLogin" class="container-fluid">
-    <view class="row">
-      <view class="col">
-        <label for="fName">First Name</label>
-        <input
-          id="fName"
-          type="text"
-          class="form-control"
-          placeholder="First name"
-        />
-      </view>
-      <view class="col">
-        <label for="lName">Last Name</label>
-        <input
-          id="lName"
-          type="text"
-          class="form-control"
-          placeholder="Last name"
-        />
-      </view>
+  <View class="container">
+    <view>
+      <text>First Name</text>
     </view>
-    <view class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        placeholder="Email"
-      />
+    <text-input class="textField" v-model="firstName"
+    />
+    <view>
+      <text>Last Name</text>
     </view>
-    <view class="row">
-      <view class="col">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          placeholder="Password"
-        />
-      </view>
-      <view class="col">
-        <label for="confirmPassword">Confirm Password</label>
-        <input
-          id=""
-          type="password"
-          class="form-control"
-          placeholder="Re-enter Password"
-        />
-      </view>
+    <text-input class="textField" v-model="lastName"
+    />
+    <view>
+      <text>Email Address</text>
     </view>
-    <view class="form-group">
-      <label for="dob">Date of Birth</label>
-      <input
-        class="form-control"
-        type="date"
-        name="dob"
-        id="dob"
-        placeholder="Date of Birth"
-      />
+    <text-input class="textField" v-model="emailAddress"
+    />
+    <view>
+      <text>Password</text>
     </view>
-    <button type="submit" class="btn btn-warning">Register</button>
-    <p>
-      <small> Already have an account? </small>
-      <small style="color: green" @click="signin"> Sign in </small>
-    </p>
-  </form>
+    <text-input class="textField" v-model="password"
+    />
+    <view>
+      <text>Confirm Password</text>
+    </view>
+    <text-input class="textField" v-model="confirmPassword"
+    />
+    <view>
+      <text>Date Of Birth</text>
+    </view>
+    <text-input class="textField" v-model="dateOfBirth"
+    />
+    <button
+      :on-press="register"
+      title="Register"
+      color="green"
+      accessibility-label="Click here to Register"
+    />
+    <view>
+      <text>Already have an account?</text>
+    </view>
+    <button
+      :on-press="signin"
+      title="Sign In"
+      color="green"
+      accessibility-label="Click here to go to log in page"
+    />
+  </View>
 </template>
 
 <script>
 export default {
-  name: "Register",
+  data: function () {
+    return {
+      firstName: "",
+      lastName: "",
+      emailAddress: "",
+      password: "",
+      firstName: "",
+      confirmPassword: "",
+      dateOfBirth: "",
+    };
+  },
   methods: {
-    signin() {
+    register: function () {
+      alert("Register pressed");
+    },
+    signin: function () {
+      //Sign in pressed, navigating back to sign in page
       this.$emit("signin");
     },
   },
 };
 </script>
 
-<style scoped>
-small {
-  cursor: pointer;
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+.textField {
+    height: 40;
+    width: 300;
+    border-color: gray;
+    border-width: 1;
 }
 </style>

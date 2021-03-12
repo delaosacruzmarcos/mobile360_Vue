@@ -3,16 +3,12 @@
     <view>
       <text>Email Address</text>
     </view>
-    <text-input
-      :style="{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }"
-      v-model="username"
+    <text-input class="textField" v-model="username"
     />
     <view>
       <text>Password</text>
     </view>
-    <text-input
-      :style="{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1 }"
-      v-model="password"
+    <text-input class="textField" v-model="password"
     />
     <button
       :on-press="signIn"
@@ -45,7 +41,8 @@ export default {
       alert("Sign in pressed");
     },
     register: function () {
-      alert("Register pressed, navigating to register page");
+      //Register pressed, navigating to register page
+      this.$emit("register");
     },
   },
 };
@@ -57,7 +54,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
-/* .text-container {
-  flex: 1;
-} */
+.textField {
+    height: 40;
+    width: 300;
+    border-color: gray;
+    border-width: 1;
+}
 </style>

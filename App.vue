@@ -1,6 +1,6 @@
 <template>
 <view class="container" v-if="!isLogin">
-    <text class="text-color-primary">HELLO WORLD</text>
+    <text>HOME PAGE</text>
 </view>
 <view class="image-container" v-else-if="isLogin">
   <image
@@ -8,8 +8,7 @@
     :source="require('./assets/dw.png')"
   />
   <text class="title">Younite360</text>
-  <Login />
-  <!-- <component @changepage="changePage" @signin="signin" @register="register" :is="which"></component> -->
+  <component @changepage="changePage" @signin="signin" @register="register" :is="which"></component>
 </view>
 </template>
 
@@ -20,15 +19,13 @@ import Register from "./components/Register";
 export default {
   name: "App",
   components: {
-    //appLogin: Login,
-    //Register
-    Login
+    Login,
+    Register
   },
   data() {
     return {
       isLogin: true,
-      //currently set to register
-      //which: "app-register",
+      which: Login,
     };
   },
   methods: {
@@ -36,10 +33,10 @@ export default {
       this.isLogin = !this.isLogin;
     },
     register() {
-      this.which = "app-register";
+      this.which = Register;
     },
     signin() {
-      this.which = "app-login";
+      this.which = Login;
     },
   },
 };
@@ -56,7 +53,7 @@ export default {
   flex: 1;
   align-items: center;
   justify-content: center;
-  margin-top: 30%;
+  margin-top: 20%;
 }
 .title {
   color: black;
