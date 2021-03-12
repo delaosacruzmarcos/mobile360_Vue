@@ -1,6 +1,6 @@
 <template>
   <view class="container" v-if="!isLogin">
-    <text>HOME PAGE</text>
+    <app-navigator></app-navigator>
   </view>
   <view class="image-container" v-else-if="isLogin">
     <image
@@ -18,14 +18,38 @@
 </template>
 
 <script>
+import {
+  createAppContainer,
+  createStackNavigator,
+} from "vue-native-router";
+
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Younnections from "./components/Younnections";
+import Messages from "./components/Messages";
+import Notifications from "./components/Notifications";
+import Home from "./components/Home";
+
+const StackNavigator = createStackNavigator(
+  {
+    YounnectionsScreen: Younnections,
+    MessagesScreen: Messages,
+    NotificationsScreen: Notifications,
+    HomeScreen: Home,
+  },
+  {
+    initialRouteName: 'HomeScreen',
+  }
+);
+
+const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
   name: "App",
   components: {
     Login,
     Register,
+    AppNavigator,
   },
   data() {
     return {
@@ -51,8 +75,34 @@ export default {
 .container {
   flex: 1;
   background-color: white;
-  align-items: center;
+}
+.circle{
+  background-color: yellow;
+  height: 1;
+  width: 1;
+  border-radius: 100;
+}
+.text-style{
+  font-size: 20;
+  color: yellow;
+}
+.nav-bar{
+  display: flex;
   justify-content: center;
+  height: 50;
+  width: 100%;
+  background-color: green;
+}
+.bottom-bar{
+  position: absolute;
+  bottom: 0;  
+  height: 50;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: green;
 }
 .image-container {
   flex: 1;
