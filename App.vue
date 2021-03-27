@@ -26,16 +26,16 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Younnections from "./components/Younnections";
 import Messages from "./components/Messages";
-import Notifications from "./components/Notifications";
+import Calendar from "./components/Calendar";
 import Home from "./components/Home";
 const StackNavigator = createStackNavigator(
   {
     YounnectionsScreen: Younnections,
-    MessagesScreen: {screen: Messages,
+    CalendarScreen: {screen: Calendar,
     navigationOptions: {title: "Calendar", headerStyle: {
           backgroundColor: 'green',
         },headerTintColor: 'yellow'}},
-    NotificationsScreen: {screen:Notifications,
+    MessagesScreen: {screen:Messages,
     navigationOptions: {title: "Message", headerStyle: {
           backgroundColor: 'green',
         },headerTintColor: 'yellow'}},

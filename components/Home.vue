@@ -7,7 +7,7 @@
         <text class="text-style">Messages</text>
       </touchable-opacity>
       <touchable-opacity :on-press="gotoNotifications">
-        <text class="text-style">Notifications</text>
+        <text class="text-style">Calendar</text>
       </touchable-opacity>
     </view>
 </template>
@@ -29,7 +29,7 @@ export default {
       this.navigation.navigate("MessagesScreen");
     },
     gotoNotifications: function(){
-      this.navigation.navigate("NotificationsScreen");
+      this.navigation.navigate("CalendarScreen");
     },
   },
 };
