@@ -13,14 +13,12 @@
 </template>
 
 <script>
-
 export default {
   props: {
     navigation: { type: Object }
   },
   data() {
     return {
-
     };
   },
   methods: {

@@ -22,28 +22,33 @@ import {
   createAppContainer,
   createStackNavigator,
 } from "vue-native-router";
-
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Younnections from "./components/Younnections";
 import Messages from "./components/Messages";
 import Notifications from "./components/Notifications";
 import Home from "./components/Home";
-
 const StackNavigator = createStackNavigator(
   {
     YounnectionsScreen: Younnections,
-    MessagesScreen: Messages,
-    NotificationsScreen: Notifications,
-    HomeScreen: Home,
+    MessagesScreen: {screen: Messages,
+    navigationOptions: {title: "Calendar", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
+    NotificationsScreen: {screen:Notifications,
+    navigationOptions: {title: "Message", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
+    HomeScreen: {screen:Home,
+    navigationOptions: {title: "Home", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
   },
   {
     initialRouteName: 'HomeScreen',
   }
 );
-
 const AppNavigator = createAppContainer(StackNavigator);
-
 export default {
   name: "App",
   components: {
