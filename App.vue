@@ -33,36 +33,66 @@ import Home from "./components/Home";
 import Messages from "./screens/Messages";
 import Calendar from "./screens/Calendar";
 
+import Header from "./screens/header/HeaderWithButtons";
+
 const DrawerNavigator = createDrawerNavigator(
   {
+    //HeaderScreen: Header,
     HomeScreen: Home,
     MessagesScreen: Messages,
     CalendarScreen: Calendar,
   },
   {
-    initialRouteName: 'HomeScreen'
+    initialRouteName: "HomeScreen",
   }
 );
 
 const StackNavigator = createStackNavigator(
   {
-    Drawer: DrawerNavigator,
-    CalendarScreen: {screen: Calendar,
-    navigationOptions: {title: "Calendar", headerStyle: {
-          backgroundColor: 'green',
-        },headerTintColor: 'yellow'}},
-    MessagesScreen: {screen:Messages,
-    navigationOptions: {title: "Message", headerStyle: {
-          backgroundColor: 'green',
-        },headerTintColor: 'yellow'}},
-    HomeScreen: {screen:Home,
-    navigationOptions: {title: "Home", headerStyle: {
-          backgroundColor: 'green',
-        },headerTintColor: 'yellow'}},
+    Drawer: {
+    screen: DrawerNavigator,
+      navigationOptions: {
+        title: "Younite360",
+        headerStyle: {
+          backgroundColor: "green",
+        },
+        headerTintColor: "yellow",
+      },
+    },
+    CalendarScreen: {
+      screen: Calendar,
+      navigationOptions: {
+        title: "Calendar",
+        headerStyle: {
+          backgroundColor: "green",
+        },
+        headerTintColor: "yellow",
+      },
+    },
+    MessagesScreen: {
+      screen: Messages,
+      navigationOptions: {
+        title: "Message",
+        headerStyle: {
+          backgroundColor: "green",
+        },
+        headerTintColor: "yellow",
+      },
+    },
+    HomeScreen: {
+      screen: Home,
+      navigationOptions: {
+        title: "Home",
+        headerStyle: {
+          backgroundColor: "green",
+        },
+        headerTintColor: "yellow",
+      },
+    },
   },
-  // {
-  //   initialRouteName: 'HomeScreen',
-  // }
+  {
+    initialRouteName: "Drawer",
+  }
 );
 
 const AppNavigator = createAppContainer(StackNavigator);
@@ -99,26 +129,26 @@ export default {
   flex: 1;
   background-color: white;
 }
-.circle{
+.circle {
   background-color: yellow;
   height: 1;
   width: 1;
   border-radius: 100;
 }
-.text-style{
+.text-style {
   font-size: 20;
   color: yellow;
 }
-.nav-bar{
+.nav-bar {
   display: flex;
   justify-content: center;
   height: 50;
   width: 100%;
   background-color: green;
 }
-.bottom-bar{
+.bottom-bar {
   position: absolute;
-  bottom: 0;  
+  bottom: 0;
   height: 50;
   width: 100%;
   display: flex;
