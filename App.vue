@@ -32,7 +32,7 @@ import Home from "./components/Home";
 //import Home from "./screens/home";
 import Messages from "./screens/Messages";
 import Calendar from "./screens/Calendar";
-
+import Profile from "./screens/Profile";
 import Header from "./screens/header/HeaderWithButtons";
 
 const DrawerNavigator = createDrawerNavigator(
@@ -41,6 +41,7 @@ const DrawerNavigator = createDrawerNavigator(
     HomeScreen: Home,
     MessagesScreen: Messages,
     CalendarScreen: Calendar,
+    ProfileScreen: Profile,
   },
   {
     initialRouteName: "HomeScreen",
@@ -83,6 +84,16 @@ const StackNavigator = createStackNavigator(
       screen: Home,
       navigationOptions: {
         title: "Home",
+        headerStyle: {
+          backgroundColor: "green",
+        },
+        headerTintColor: "yellow",
+      },
+    },
+    ProfileScreen: {
+      screen: Profile,
+      navigationOptions: {
+        title: "Profile",
         headerStyle: {
           backgroundColor: "green",
         },
