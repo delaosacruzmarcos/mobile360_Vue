@@ -55,14 +55,14 @@
 
 <script>
 // I just copied and pasted the header and the footer in, can solve the impoer issue later 
-import NewContent from '../components/NewContent.vue'
-import Header from './header/HeaderWithButtons.vue'
-import Footer from './footer/iconFooter'
+// import NewContent from '../components/NewContent.vue'
+// import Header from './header/HeaderWithButtons.vue'
+// import Footer from './footer/iconFooter'
 
 import PostingItem from "./Posting/PostingItem"
 import AddPost from "./Posting/AddPost"
-import AddPost from './Posting/AddPost.vue'
-import PostingItem from './Posting/PostingItem.vue'
+// import AddPost from './Posting/AddPost.vue'
+// import PostingItem from './Posting/PostingItem.vue'
 export default {
   data: function() {
       return {

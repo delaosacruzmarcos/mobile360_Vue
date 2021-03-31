@@ -15,6 +15,7 @@
             </touchable-opacity>
             <touchable-opacity v-bind:on-press="CancelIconPress" class='done-button'>
                 <!-- same approach with the source code -->
+            </touchable-opacity>
         </view>
         <view class='post-button-wrapper' v-if="!post.edited">
             <touchable-opacity :on-press="editIconPress" class='edit-button'>

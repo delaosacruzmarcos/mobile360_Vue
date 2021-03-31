@@ -1,6 +1,6 @@
 <template>
   <view class="container" v-if="!isLogin">
-    <text>HOME PAGE</text>
+    <app-navigator></app-navigator>
   </view>
   <view class="image-container" v-else-if="isLogin">
     <image
@@ -18,14 +18,61 @@
 </template>
 
 <script>
+//navigator
+import {
+  createAppContainer,
+  createStackNavigator,
+  createDrawerNavigator,
+} from "vue-native-router";
+
 import Login from "./components/Login";
 import Register from "./components/Register";
+
+import Home from "./components/Home";
+//import Home from "./screens/home";
+import Messages from "./screens/Messages";
+import Calendar from "./screens/Calendar";
+
+const DrawerNavigator = createDrawerNavigator(
+  {
+    HomeScreen: Home,
+    MessagesScreen: Messages,
+    CalendarScreen: Calendar,
+  },
+  {
+    initialRouteName: 'HomeScreen'
+  }
+);
+
+const StackNavigator = createStackNavigator(
+  {
+    Drawer: DrawerNavigator,
+    CalendarScreen: {screen: Calendar,
+    navigationOptions: {title: "Calendar", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
+    MessagesScreen: {screen:Messages,
+    navigationOptions: {title: "Message", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
+    HomeScreen: {screen:Home,
+    navigationOptions: {title: "Home", headerStyle: {
+          backgroundColor: 'green',
+        },headerTintColor: 'yellow'}},
+  },
+  // {
+  //   initialRouteName: 'HomeScreen',
+  // }
+);
+
+const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
   name: "App",
   components: {
     Login,
     Register,
+    AppNavigator,
   },
   data() {
     return {
@@ -51,8 +98,34 @@ export default {
 .container {
   flex: 1;
   background-color: white;
-  align-items: center;
+}
+.circle{
+  background-color: yellow;
+  height: 1;
+  width: 1;
+  border-radius: 100;
+}
+.text-style{
+  font-size: 20;
+  color: yellow;
+}
+.nav-bar{
+  display: flex;
   justify-content: center;
+  height: 50;
+  width: 100%;
+  background-color: green;
+}
+.bottom-bar{
+  position: absolute;
+  bottom: 0;  
+  height: 50;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: green;
 }
 .image-container {
   flex: 1;
