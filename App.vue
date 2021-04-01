@@ -34,6 +34,7 @@ import Messages from "./screens/Messages";
 import Calendar from "./screens/Calendar";
 import Profile from "./screens/Profile";
 import Header from "./screens/header/HeaderWithButtons";
+import Younnections from "./screens/Younnections";
 
 const DrawerNavigator = createDrawerNavigator(
   {
@@ -42,12 +43,12 @@ const DrawerNavigator = createDrawerNavigator(
     MessagesScreen: Messages,
     CalendarScreen: Calendar,
     ProfileScreen: Profile,
+    YounnectionsScreen: Younnections,
   },
   {
     initialRouteName: "HomeScreen",
   }
 );
-
 const StackNavigator = createStackNavigator(
   {
     Drawer: {
@@ -60,52 +61,11 @@ const StackNavigator = createStackNavigator(
         headerTintColor: "yellow",
       },
     },
-    CalendarScreen: {
-      screen: Calendar,
-      navigationOptions: {
-        title: "Calendar",
-        headerStyle: {
-          backgroundColor: "green",
-        },
-        headerTintColor: "yellow",
-      },
-    },
-    MessagesScreen: {
-      screen: Messages,
-      navigationOptions: {
-        title: "Message",
-        headerStyle: {
-          backgroundColor: "green",
-        },
-        headerTintColor: "yellow",
-      },
-    },
-    HomeScreen: {
-      screen: Home,
-      navigationOptions: {
-        title: "Home",
-        headerStyle: {
-          backgroundColor: "green",
-        },
-        headerTintColor: "yellow",
-      },
-    },
-    ProfileScreen: {
-      screen: Profile,
-      navigationOptions: {
-        title: "Profile",
-        headerStyle: {
-          backgroundColor: "green",
-        },
-        headerTintColor: "yellow",
-      },
-    },
   },
   {
     initialRouteName: "Drawer",
   }
 );
-
 const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
