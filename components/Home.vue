@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     gotoYounnections: function() {
-      this.navigation.navigate("YounnectionsScreen");
+      this.navigation.navigate("Younnections");
     },
     gotoMessages: function() {
-      this.navigation.navigate("MessagesScreen");
+      this.navigation.navigate("Messages");
     },
     gotoNotifications: function() {
-      this.navigation.navigate("CalendarScreen");
+      this.navigation.navigate("Calendar");
     },
   },
 };

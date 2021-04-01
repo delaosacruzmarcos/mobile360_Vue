@@ -28,31 +28,33 @@ import {
 import Login from "./components/Login";
 import Register from "./components/Register";
 
-import Home from "./components/Home";
+import HomeScreen from "./components/Home";
 //import Home from "./screens/home";
-import Messages from "./screens/Messages";
-import Calendar from "./screens/Calendar";
-import Profile from "./screens/Profile";
+import MessagesScreen from "./screens/Messages";
+import CalendarScreen from "./screens/Calendar";
+import ProfileScreen from "./screens/Profile";
 import Header from "./screens/header/HeaderWithButtons";
-import Younnections from "./screens/Younnections";
+import YounnectionsScreen from "./screens/Younnections";
+import NotificaitonsScreen from "./screens/Notifications";
 
 const DrawerNavigator = createDrawerNavigator(
   {
     //HeaderScreen: Header,
-    HomeScreen: Home,
-    MessagesScreen: Messages,
-    CalendarScreen: Calendar,
-    ProfileScreen: Profile,
-    YounnectionsScreen: Younnections,
+    Home: HomeScreen,
+    Messages: MessagesScreen,
+    Calendar: CalendarScreen,
+    Profile: ProfileScreen,
+    Younnections: YounnectionsScreen,
+    Notifications: NotificaitonsScreen,
   },
   {
-    initialRouteName: "HomeScreen",
+    initialRouteName: "Home",
   }
 );
 const StackNavigator = createStackNavigator(
   {
     Drawer: {
-    screen: DrawerNavigator,
+      screen: DrawerNavigator,
       navigationOptions: {
         title: "Younite360",
         headerStyle: {

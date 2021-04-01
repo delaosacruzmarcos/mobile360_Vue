@@ -9,16 +9,16 @@
         </view>
         <view class="manager-group">
         <touchable-opacity class="sections">
-            <text class="manger-text">Connections</text>
-            <text class="manger-text">101</text>
+            <text class="manager-text">Connections</text>
+            <text class="manager-text">101</text>
         </touchable-opacity>
         <touchable-opacity class="sections">
-            <text class="manger-text">Groups</text>
-            <text class="manger-text">10</text>
+            <text class="manager-text">Groups</text>
+            <text class="manager-text">10</text>
         </touchable-opacity>
         <touchable-opacity class="sections">
-            <text class="manger-text">Contacts</text>
-            <text class="manger-text">165</text>
+            <text class="manager-text">Contacts</text>
+            <text class="manager-text">165</text>
         </touchable-opacity>
         </view>
     </card>
@@ -116,7 +116,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
 }
-.manger-text{
+.manager-text{
     padding: 8;
     font-size: 15px;
     color:black;
