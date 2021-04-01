@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+    <card class="card-header-container">
     <image-background :source="require('../assets/background.png')" class="background">
         <image class="avatar"
             :source="require('../assets/icons8-user-male-500.png')"
@@ -9,16 +10,23 @@
             <text class="info-text">bhargavK@example.com</text>
         </view>
         <text class="about-content">Hard-working individual with proficiency in HTML, JavaScript, and CSS, as well as ability to communicate effectively in a team setting.</text>
-    </image-background>
-    <view class="section">
+    </image-background> 
+    </card> 
+    <touchable-opacity class="clickable-container"> 
+    <card class="card-container">
+    <view class="section">          
         <image class="icon"
             :source="require('../assets/icons8-school-80.png')"
         />
         <view class="content"> 
             <text class="content-header">School</text>
             <text class="content-detail">University at Buffalo</text>
-        </view>
+        </view>       
     </view>
+    </card>
+    </touchable-opacity>
+    <touchable-opacity class="clickable-container">
+    <card class="card-container">
     <view class="section">
         <image class="icon"
             :source="require('../assets/icons8-job-seeker-96.png')"
@@ -28,6 +36,10 @@
             <text class="content-detail">Full Stack Developer</text>
         </view>
     </view>
+    </card>
+    </touchable-opacity>
+    <touchable-opacity class="clickable-container">
+    <card class="card-container">
     <view class="section">
         <image class="icon"
             :source="require('../assets/icons8-development-skill-96.png')"
@@ -38,27 +50,36 @@
             <text class="content-detail">CSS, JavaScript, VueJS</text>
         </view>
     </view>
+    </card>
+    </touchable-opacity>
   </view>
 </template>
 
 <script>
-import { ImageBackground, StyleSheet } from "react-native";
+import React from "react";
+import { ImageBackground, View,StyleSheet,TouchableOpacity,Text} from "react-native";
+import { Card } from 'react-native-paper';
 export default {
     props: {
     navigation: { type: Object }
   },
   data() {
     return {
-      message: "Profile page"
+      text:"hello",
+      styles: StyleSheet.create({
+        item:{flexDirection:'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'}
+      })
     };
   },
   methods: {
        goToHomeScreen() {
       this.navigation.navigate("HomeScreen");
-    }
+    },
   },
   components:{
-      ImageBackground, StyleSheet
+      ImageBackground, View,StyleSheet,TouchableOpacity,Text, Card,React
   }
 };
 </script>
@@ -67,8 +88,27 @@ export default {
 .container {
   flex: 1;
   width: 100%;
-  background-color: white;
+  background-color: #f2f2f2;
   align-items: center;
+}
+.card-container{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.clickable-container{
+    width: 95%;
+    height: 15%;
+    margin-top: 1.7%;
+}
+.card-header-container{
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 .text-color-primary {
   color: blue;
@@ -82,7 +122,7 @@ export default {
     overflow: hidden;
 }
 .background{
-    flex: 0.50;
+    flex: 1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -115,6 +155,8 @@ export default {
 }
 
 .content{
+    width: 90%;
+    height: 35px;
     flex-direction: column;
 }
 .content-header{
@@ -136,5 +178,9 @@ export default {
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
+}
+
+.sections-container{
+    flex:0.5;
 }
 </style>

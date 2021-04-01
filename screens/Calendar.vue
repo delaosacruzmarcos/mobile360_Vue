@@ -1,14 +1,22 @@
 <template>
   <view :style="{flex:1}">
+    <!-- <text>{{CurrentDate}}</text> -->
     <agenda
         v-bind:items="items"
         :loadItemsForMonth="loadItems"
-        :selected= "{currentDate}"/>
+        :renderItem="renderItem"
+        :theme="{ agendaDayTextColor: 'green', agendaDayNumColor: 'green',
+        selectedDayBackgroundColor:'green',dotColor: 'green',
+        todayTextColor: 'orange',agendaTodayColor: 'orange',
+        dotColor: 'white',}"
+        />
   </view>
 </template>
 
 <script>
-import {View,StyleSheet} from "react-native";
+import React from "react";
+import { Avatar,Card } from 'react-native-paper';
+import {View,StyleSheet,TouchableOpacity,Text} from "react-native";
 import {Agenda} from 'react-native-calendars';
 const timeToString = (time) =>{
     var date = new Date(time);
@@ -20,38 +28,37 @@ export default {
   },
   data: function() {
     return {
-      currentDate: this.dateToString(new Date().toDateString().substring(4)),
-      items: {}
+      CurrentDate: this.dateToString(new Date().toDateString().substring(4)),
+      items: {},
+      styles: StyleSheet.create({
+        item:{flexDirection:'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'}
+      })
     };
   },
   methods: {
     dateToString: function (time){
       var vm=this;
       var temp=time.split(" ");
-      if (temp[0]=="Jan"){vm.currentDate="01";}
-      else if (temp[0]=="Feb"){vm.currentDate="02";}
-      else if (temp[0]=="Mar"){vm.currentDate="03";}
-      else if (temp[0]=="Apr"){vm.currentDate="04";}
-      else if (temp[0]=="May"){vm.currentDate="05";}
-      else if (temp[0]=="Jun"){vm.currentDate="06";}
-      else if (temp[0]=="Jul"){vm.currentDate="07";}
-      else if (temp[0]=="Aug"){vm.currentDate="08";}
-      else if (temp[0]=="Sep"){vm.currentDate="09";}
-      else if (temp[0]=="Oct"){vm.currentDate="10";}
-      else if (temp[0]=="Nov"){vm.currentDate="11";}
-      else if (temp[0]=="Dec"){vm.currentDate="12";}
-      if(temp[1].length<2){
-        var t="0"+temp[1];
-        vm.currentDate+="-";
-        vm.currentDate+=t;
-      }else{
-        vm.currentDate+="-";
-        vm.currentDate+=temp[1];
-      }
-      vm.currentDate+="-";
-      vm.currentDate+=temp[2];
-      
-      return temp;
+      if (temp[0]=="Jan"){vm.CurrentDate="1";}
+      else if (temp[0]=="Feb"){vm.CurrentDate="2";}
+      else if (temp[0]=="Mar"){vm.CurrentDate="3";}
+      else if (temp[0]=="Apr"){vm.CurrentDate="4";}
+      else if (temp[0]=="May"){vm.CurrentDate="5";}
+      else if (temp[0]=="Jun"){vm.CurrentDate="6";}
+      else if (temp[0]=="Jul"){vm.CurrentDate="7";}
+      else if (temp[0]=="Aug"){vm.CurrentDate="8";}
+      else if (temp[0]=="Sep"){vm.CurrentDate="9";}
+      else if (temp[0]=="Oct"){vm.CurrentDate="10";}
+      else if (temp[0]=="Nov"){vm.CurrentDate="11";}
+      else if (temp[0]=="Dec"){vm.CurrentDate="12";}
+      vm.CurrentDate+="-";
+      vm.CurrentDate+=temp[1];
+      vm.CurrentDate+="-";
+      vm.CurrentDate+=temp[2];
+      var result=vm.CurrentDate;
+      return result;
     },
     goToHomeScreen() {
       this.navigation.navigate("HomeScreen");
@@ -82,11 +89,25 @@ export default {
       });
       vm.setItem(newItems);
     }, 1000);
+  },
+  renderItem(item){
+    return (
+      <TouchableOpacity style={{marginRight:10, marginTop:17}}>
+      <Card>
+        <Card.Content>
+        <View style={this.styles.item}>
+          <Text>{item.name}</Text>
+          <Avatar.Text label="E" style={{backgroundColor: 'orange'}}/>
+        </View>
+        </Card.Content>
+      </Card>
+      </TouchableOpacity>
+    );
   }
   
   },
   components: {
-    View, Agenda,StyleSheet, 
+    View, Agenda,StyleSheet, React,TouchableOpacity,Text,Avatar,Card
   }
 };
 </script>

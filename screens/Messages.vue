@@ -18,7 +18,7 @@ export default {
         {
           id: '1',
           userName: 'Chin Ya Russell',
-          userImg: require('../assets/user.png'),
+          userImg: require('../assets/icons8-user-male-500.png'),
           messageTime: '4 mins ago',
           messageText:
           'Hey there, this is my test for a post of my social app in React Native.',
@@ -26,7 +26,7 @@ export default {
         {
           id: '2',
           userName: 'Sejal Agarwal',
-          userImg: require('../assets/user.png'),
+          userImg: require('../assets/icons8-user-male-500.png'),
           messageTime: '2 hours ago',
           messageText:
           'Hey there, this is my test for a post of my social app in React Native.',
@@ -46,7 +46,7 @@ export default {
       },
       userImg:{
         width:50,
-        height:50
+        height:50,
       },
       textSection:{
         flexDirection: 'column',
@@ -89,7 +89,7 @@ export default {
       <TouchableOpacity style={this.styles.card} onPress={this.goToChat}>
         <View style={this.styles.userInfo}>
           <View style={this.styles.userImgWrapper}>
-            <Image source={item.item.userImg}/>
+            <Image style={this.styles.userImg} source={item.item.userImg}/>
           </View>
           <View style={this.styles.textSection}>
             <View style={this.styles.userInfoText}>
