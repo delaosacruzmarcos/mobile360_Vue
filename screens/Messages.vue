@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <Header @drawer="openDrawer"></Header>
+    <Header @drawer="openDrawer" :title="title"></Header>
     <flat-list
       :data="Messages"
       :keyExtractor="(item) => item.id"
@@ -27,6 +27,7 @@ export default {
   },
   data() {
     return {
+      title:"Messages",
       Messages: [
         {
           id: "1",

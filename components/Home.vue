@@ -1,6 +1,6 @@
 <template>
 <view class="nav-bar">
-  <Header @drawer="openDrawer"></Header>
+  <Header @drawer="openDrawer" :title="title"></Header>
 </view>
   <view class="bottom-bar">
     <touchable-opacity :on-press="gotoYounnections">
@@ -22,7 +22,9 @@ export default {
     navigation: { type: Object },
   },
   data() {
-    return {};
+    return {
+      title:"Home"
+    };
   },
   methods: {
     gotoYounnections: function() {

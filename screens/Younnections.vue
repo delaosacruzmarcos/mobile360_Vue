@@ -1,6 +1,6 @@
 <template>
   <view class="main-container">
-    <Header @drawer="openDrawer"></Header>
+    <Header @drawer="openDrawer" :title="title"></Header>
     <card class="manager-container">
       <view class="header-container">
         <image class="icon" :source="require('../assets/manager.png')" />
@@ -26,6 +26,7 @@
         <image class="icon" :source="require('../assets/request-friend.png')" />
         <text class="header">Requests from younnectors</text>
       </view>
+      <scroll-view>
       <view class="request">
         <view class="person">
           <text class="request-person">Chin Ya Russell</text>
@@ -56,6 +57,7 @@
           >
         </view>
       </view>
+      <scroll-view>
     </card>
   </view>
 </template>
@@ -68,7 +70,9 @@ export default {
     navigation: { type: Object },
   },
   data() {
-    return {};
+    return {
+      title:"Younnections",
+    };
   },
   methods: {
     openDrawer: function() {

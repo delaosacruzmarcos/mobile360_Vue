@@ -1,6 +1,6 @@
 <template>
   <view class="main-container">
-      <Header @drawer="openDrawer"></Header>
+      <Header @drawer="openDrawer" :title="title"></Header>
     <card class="notification-container">
       <view class="header-container">
         <text class="header">Network Notifications</text>
@@ -62,7 +62,9 @@ export default {
     navigation: { type: Object },
   },
   data() {
-    return {};
+    return {
+      title:"Notifications"
+    };
   },
   methods: {
     openDrawer: function() {

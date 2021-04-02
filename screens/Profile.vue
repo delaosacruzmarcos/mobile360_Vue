@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+      <Header @drawer="openDrawer" :title="title"></Header>
     <card class="card-header-container">
     <image-background :source="require('../assets/background.png')" class="background">
         <image class="avatar"
@@ -59,12 +60,14 @@
 import React from "react";
 import { ImageBackground, View,StyleSheet,TouchableOpacity,Text} from "react-native";
 import { Card } from 'react-native-paper';
+import Header from "../components/header";
 export default {
     props: {
     navigation: { type: Object }
   },
   data() {
     return {
+      title:"Profile",
       text:"hello",
       styles: StyleSheet.create({
         item:{flexDirection:'row',
@@ -77,9 +80,12 @@ export default {
        goToHomeScreen() {
       this.navigation.navigate("HomeScreen");
     },
+    openDrawer: function() {
+      this.navigation.openDrawer();
+    },
   },
   components:{
-      ImageBackground, View,StyleSheet,TouchableOpacity,Text, Card,React
+      ImageBackground, View,StyleSheet,TouchableOpacity,Text, Card,React,Header 
   }
 };
 </script>
@@ -105,7 +111,7 @@ export default {
 }
 .card-header-container{
     width: 100%;
-    height: 50%;
+    height: 43%;
     align-items: center;
     display: flex;
     flex-direction: row;

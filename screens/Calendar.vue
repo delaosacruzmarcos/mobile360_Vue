@@ -1,7 +1,8 @@
 <template>
-  <view :style="{ flex: 1 }">
-    <Header @drawer="openDrawer"></Header>
+  <view :style="{ flex: 1, alignItems:'center'}">
+    <Header @drawer="openDrawer" :title="title"></Header>
     <!-- <text>{{CurrentDate}}</text> -->
+    <view class="calendar-container">
     <agenda
       v-bind:items="items"
       :loadItemsForMonth="loadItems"
@@ -16,6 +17,7 @@
         dotColor: 'white',
       }"
     />
+    </view>
   </view>
 </template>
 
@@ -35,6 +37,7 @@ export default {
   },
   data: function() {
     return {
+      title:"Calendar",
       CurrentDate: this.dateToString(new Date().toDateString().substring(4)),
       items: {},
       styles: StyleSheet.create({
@@ -144,4 +147,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.calendar-container{
+  height: 100%;
+  width: 100%;
+}
+</style>
