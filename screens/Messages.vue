@@ -1,5 +1,5 @@
 <template>
-  <view class="container">
+  <view>
     <Header @drawer="openDrawer" :title="title"></Header>
     <flat-list
       :data="Messages"
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      title:"Messages",
+      title: "Messages",
       Messages: [
         {
           id: "1",

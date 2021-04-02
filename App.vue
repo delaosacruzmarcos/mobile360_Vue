@@ -66,7 +66,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     initialRouteName: "Drawer",
-    headerMode: "none"
+    headerMode: "none",
   }
 );
 const AppNavigator = createAppContainer(StackNavigator);
@@ -112,13 +112,6 @@ export default {
 .text-style {
   font-size: 20;
   color: yellow;
-}
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  height: 50;
-  width: 100%;
-  background-color: green;
 }
 .bottom-bar {
   position: absolute;
