@@ -66,6 +66,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     initialRouteName: "Drawer",
+    headerMode: "none"
   }
 );
 const AppNavigator = createAppContainer(StackNavigator);

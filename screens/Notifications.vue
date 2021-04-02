@@ -1,5 +1,6 @@
 <template>
   <view class="main-container">
+      <Header @drawer="openDrawer"></Header>
     <card class="notification-container">
       <view class="header-container">
         <text class="header">Network Notifications</text>
@@ -55,12 +56,20 @@
 
 <script>
 import { Card } from "react-native-paper";
+import Header from "../components/header";
 export default {
+  props: {
+    navigation: { type: Object },
+  },
   data() {
     return {};
   },
-  methods: {},
-  components: { Card },
+  methods: {
+    openDrawer: function() {
+      this.navigation.openDrawer();
+    },
+  },
+  components: { Header, Card },
 };
 </script>
 

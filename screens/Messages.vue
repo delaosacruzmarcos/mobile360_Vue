@@ -1,111 +1,139 @@
 <template>
-      <view class="container">
-        <flat-list :data="Messages" :keyExtractor="item => item.id"
-           :render-item="(item) => renderList(item)"/>
-      </view>
+  <view class="container">
+    <Header @drawer="openDrawer"></Header>
+    <flat-list
+      :data="Messages"
+      :keyExtractor="(item) => item.id"
+      :render-item="(item) => renderList(item)"
+    />
+  </view>
 </template>
 
 <script>
 import React from "react";
-import {StyleSheet, Text, TouchableOpacity, View, FlatList, Button, Image} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  FlatList,
+  Button,
+  Image,
+} from "react-native";
+import Header from "../components/header";
 export default {
   props: {
-    navigation: { type: Object }
+    navigation: { type: Object },
   },
   data() {
     return {
       Messages: [
         {
-          id: '1',
-          userName: 'Chin Ya Russell',
-          userImg: require('../assets/icons8-user-male-500.png'),
-          messageTime: '4 mins ago',
+          id: "1",
+          userName: "Chin Ya Russell",
+          userImg: require("../assets/icons8-user-male-500.png"),
+          messageTime: "4 mins ago",
           messageText:
-          'Hey there, this is my test for a post of my social app in React Native.',
+            "Hey there, this is my test for a post of my social app in React Native.",
         },
         {
-          id: '2',
-          userName: 'Sejal Agarwal',
-          userImg: require('../assets/icons8-user-male-500.png'),
-          messageTime: '2 hours ago',
+          id: "2",
+          userName: "Sejal Agarwal",
+          userImg: require("../assets/icons8-user-male-500.png"),
+          messageTime: "2 hours ago",
           messageText:
-          'Hey there, this is my test for a post of my social app in React Native.',
+            "Hey there, this is my test for a post of my social app in React Native.",
         },
       ],
       styles: StyleSheet.create({
-      card: {
-        width: '100%'
-      },
-      userInfo:{
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-      },
-      userImgWrapper:{
-        paddingTop: 15,
-        paddingBottom: 15
-      },
-      userImg:{
-        width:50,
-        height:50,
-      },
-      textSection:{
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: 15,
-        paddingLeft: 0,
-        marginLeft: 10,
-        width: 300,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
-      },
-      userInfoText:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 5,
-      },
-      userName:{
-        fontSize: 14,
-        fontWeight:'bold',
-      },
-      postTime:{
-        fontSize:12,
-        color:"#666",
-      },
-      messageText:{
-        fontSize:14,
-      }
+        card: {
+          width: "100%",
+        },
+        userInfo: {
+          flexDirection: "row",
+          justifyContent: "space-between",
+        },
+        userImgWrapper: {
+          paddingTop: 15,
+          paddingBottom: 15,
+        },
+        userImg: {
+          width: 50,
+          height: 50,
+        },
+        textSection: {
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: 15,
+          paddingLeft: 0,
+          marginLeft: 10,
+          width: 300,
+          borderBottomWidth: 1,
+          borderBottomColor: "#cccccc",
+        },
+        userInfoText: {
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginBottom: 5,
+        },
+        userName: {
+          fontSize: 14,
+          fontWeight: "bold",
+        },
+        postTime: {
+          fontSize: 12,
+          color: "#666",
+        },
+        messageText: {
+          fontSize: 14,
+        },
       }),
     };
   },
   methods: {
-      goToHomeScreen() {
+    openDrawer: function() {
+      this.navigation.openDrawer();
+    },
+    goToHomeScreen() {
       this.navigation.navigate("HomeScreen");
     },
-      goToChat() {
+    goToChat() {
       this.navigation.navigate("HomeScreen");
     },
     renderList: function(item) {
-     return (
-      <TouchableOpacity style={this.styles.card} onPress={this.goToChat}>
-        <View style={this.styles.userInfo}>
-          <View style={this.styles.userImgWrapper}>
-            <Image style={this.styles.userImg} source={item.item.userImg}/>
-          </View>
-          <View style={this.styles.textSection}>
-            <View style={this.styles.userInfoText}>
-              <Text style={this.styles.userName}>{item.item.userName}</Text>
-              <Text style={this.styles.postTime}>{item.item.messageTime}</Text>
+      return (
+        <TouchableOpacity style={this.styles.card} onPress={this.goToChat}>
+          <View style={this.styles.userInfo}>
+            <View style={this.styles.userImgWrapper}>
+              <Image style={this.styles.userImg} source={item.item.userImg} />
             </View>
-            <Text style={this.styles.messageText}>{item.item.messageText}</Text>
+            <View style={this.styles.textSection}>
+              <View style={this.styles.userInfoText}>
+                <Text style={this.styles.userName}>{item.item.userName}</Text>
+                <Text style={this.styles.postTime}>
+                  {item.item.messageTime}
+                </Text>
+              </View>
+              <Text style={this.styles.messageText}>
+                {item.item.messageText}
+              </Text>
+            </View>
           </View>
-        </View>
-      </TouchableOpacity>
-       )
-    }
+        </TouchableOpacity>
+      );
+    },
   },
   components: {
-   StyleSheet, Text, View, FlatList, Button, TouchableOpacity, Image, React
-  }
+    StyleSheet,
+    Text,
+    View,
+    FlatList,
+    Button,
+    TouchableOpacity,
+    Image,
+    React,
+    Header,
+  },
 };
 </script>
 

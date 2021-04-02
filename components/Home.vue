@@ -1,4 +1,7 @@
 <template>
+<view class="nav-bar">
+  <Header @drawer="openDrawer"></Header>
+</view>
   <view class="bottom-bar">
     <touchable-opacity :on-press="gotoYounnections">
       <text class="text-style">Younnections</text>
@@ -13,6 +16,7 @@
 </template>
 
 <script>
+import Header from "../components/header";
 export default {
   props: {
     navigation: { type: Object },
@@ -30,7 +34,11 @@ export default {
     gotoNotifications: function() {
       this.navigation.navigate("Calendar");
     },
+    openDrawer: function() {
+      this.navigation.openDrawer();
+    },
   },
+  components: { Header },
 };
 </script>
 
