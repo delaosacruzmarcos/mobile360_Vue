@@ -28,6 +28,18 @@
   </nb-container> 
     </header>
 </view>
+<view>
+<image-background :source="require('../assets/background.png')" class="background">
+        <image class="avatar"
+            :source="require('../assets/icons8-user-male-500.png')"
+        />
+        <view class="info">
+            <text class="info-text-name">Bhargav Koritala</text>
+            <text class="info-text">bhargavK@example.com</text>
+        </view>
+        <text class="about-content">Hard-working individual with proficiency in HTML, JavaScript, and CSS, as well as ability to communicate effectively in a team setting.</text>
+    </image-background> 
+</view>
 <add-post
         :on-add='addPost'
  />       
