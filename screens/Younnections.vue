@@ -57,7 +57,7 @@
           >
         </view>
       </view>
-      <scroll-view>
+      </scroll-view>
     </card>
   </view>
 </template>
