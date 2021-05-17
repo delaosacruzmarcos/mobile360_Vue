@@ -100,7 +100,7 @@ export default {
 }
 .header {
   font-size: 16px;
-  color: yellow;
+  color: #F1C40F;
   font-weight: bold;
   letter-spacing: 0.5px;
 }

@@ -3,7 +3,6 @@
     <Header @drawer="openDrawer" :title="title"></Header>
     <card class="manager-container">
       <view class="header-container">
-        <image class="icon" :source="require('../assets/manager.png')" />
         <text class="header">Younnections Manager</text>
       </view>
       <view class="manager-group">
@@ -23,7 +22,6 @@
     </card>
     <card class="request-container">
       <view class="header-container">
-        <image class="icon" :source="require('../assets/request-friend.png')" />
         <text class="header">Requests from younnectors</text>
       </view>
       <scroll-view>
@@ -117,9 +115,10 @@ export default {
 }
 .header {
   font-size: 16px;
-  color: yellow;
+  color: #F1C40F;
   font-weight: bold;
   letter-spacing: 0.5px;
+  margin-left: 10px;
 }
 .icon {
   width: 35px;
@@ -133,7 +132,7 @@ export default {
 }
 .manager-text {
   padding: 8;
-  font-size: 15px;
+  font-size: 18px;
   color: black;
 }
 .request {
@@ -145,16 +144,19 @@ export default {
 }
 .person {
   margin: 10px;
+  padding: 5px;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 .btns {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 35%;
+  margin-right: 5px;
 }
 .request-person {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   padding-bottom: 5px;
 }

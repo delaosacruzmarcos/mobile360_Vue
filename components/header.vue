@@ -1,7 +1,7 @@
 <template>
   <view class="header-container">
     <touchable-opacity :on-press="openDrawer">
-      <image class="icon" :source="require('../assets/menu-icon.png')" />
+      <image class="icon" :source="require('../assets/icons8-menu-100.png')" />
     </touchable-opacity>
     <view class="title-container">
       <text class="header-title">{{ title }}</text>
@@ -36,8 +36,9 @@ export default {
   background-color: green;
 }
 .icon {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
+  margin: 5px;
 }
 .title-container{
     flex: 1;
@@ -45,7 +46,8 @@ export default {
     margin-right: 35px;
 }
 .header-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  color: #F1C40F;
 }
 </style>

@@ -52,7 +52,7 @@ export default {
         },
         userInfo: {
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
         },
         userImgWrapper: {
           paddingTop: 15,

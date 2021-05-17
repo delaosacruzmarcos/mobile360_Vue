@@ -1,59 +1,82 @@
 <template>
-  <view class="container">
+  <scroll-view>
       <Header @drawer="openDrawer" :title="title"></Header>
-    <card class="card-header-container">
-    <image-background :source="require('../assets/background.png')" class="background">
-        <image class="avatar"
-            :source="require('../assets/icons8-user-male-500.png')"
-        />
-        <view class="info">
-            <text class="info-text-name">Bhargav Koritala</text>
-            <text class="info-text">bhargavK@example.com</text>
-        </view>
-        <text class="about-content">Hard-working individual with proficiency in HTML, JavaScript, and CSS, as well as ability to communicate effectively in a team setting.</text>
-    </image-background> 
-    </card> 
-    <touchable-opacity class="clickable-container"> 
-    <card class="card-container">
-    <view class="section">          
-        <image class="icon"
-            :source="require('../assets/icons8-school-80.png')"
-        />
-        <view class="content"> 
-            <text class="content-header">School</text>
-            <text class="content-detail">University at Buffalo</text>
-        </view>       
-    </view>
-    </card>
-    </touchable-opacity>
-    <touchable-opacity class="clickable-container">
-    <card class="card-container">
-    <view class="section">
-        <image class="icon"
-            :source="require('../assets/icons8-job-seeker-96.png')"
-        />
-        <view class="content"> 
-            <text class="content-header">Occupation</text>
-            <text class="content-detail">Full Stack Developer</text>
-        </view>
-    </view>
-    </card>
-    </touchable-opacity>
-    <touchable-opacity class="clickable-container">
-    <card class="card-container">
-    <view class="section">
-        <image class="icon"
-            :source="require('../assets/icons8-development-skill-96.png')"
-        />
-        
-        <view class="content"> 
-            <text class="content-header">Skills</text>
-            <text class="content-detail">CSS, JavaScript, VueJS</text>
-        </view>
-    </view>
-    </card>
-    </touchable-opacity>
-  </view>
+        <view class="main"></view>
+          <view class="avatar-container">
+              <touchable-opacity>
+                <view class="avatar-boarder">
+                    <image class="avatar" :source="require('../assets/icons8-user-male-500.png')"/>
+                </view>
+              </touchable-opacity>
+              <text class="name-text">Bhargav Koritala</text>
+              <text class="email-text">bhargavK@example.com</text>
+              <view class="about-section">
+                <text class="about-header">About</text>
+                <text class="about-text">Hard-working individual with proficiency in HTML, JavaScript, and CSS, as well as ability to communicate effectively in a team setting.</text>
+              </view>
+            <view class="line"></view>
+          </view>
+            <view class="info-container">
+              <view class="info-header-container">
+                  <view class="info-header">
+                      <text class="info-text">Education</text>
+                      <touchable-opacity>
+                      <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
+                      </touchable-opacity>
+                  </view>
+                  <view class="info-detail">
+                      <text class="school-name">University at Buffalo</text>
+                      <text class="degree">Master's</text>
+                      <text class="major">Computer Science</text>
+                      <text class="date">2019 - Present</text>
+                  </view>
+                  <view class="info-detail">
+                      <text class="school-name">Vellore Institute of Technology</text>
+                      <text class="degree">Bachelor's</text>
+                      <text class="major">Electronics and Communication</text>
+                      <text class="date">2013 - 2017</text>
+                  </view>
+                </view>
+                <view class="line"></view>
+                <view class="info-header-container">
+                  <view class="info-header">
+                      <text class="info-text">Work Experience</text>
+                      <touchable-opacity>
+                      <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
+                      </touchable-opacity>
+                  </view>
+                  <view class="info-detail">
+                      <text class="company-name">Atwick Inc.</text>
+                      <text class="job-title">Full Stack Developer Intern</text>
+                      <text class="location">Ithaca, NY</text>
+                      <text class="date">10/12/2020 - Present</text>
+                  </view>
+                </view>
+                <view class="line"></view>
+                <view class="info-header-container">
+                  <view class="info-header">
+                      <text class="info-text">Skills</text>
+                      <touchable-opacity>
+                      <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
+                      </touchable-opacity>
+                  </view>
+                  <view class="skill-tag-container">
+                      <view class="skill-tag">
+                          <text class="tag-text">HTML</text>
+                      </view>
+                      <view class="skill-tag">
+                          <text class="tag-text">CSS</text>
+                      </view>
+                      <view class="skill-tag">
+                          <text class="tag-text">JavaScript</text>
+                      </view>
+                      <view class="skill-tag">
+                          <text class="tag-text">VueJS</text>
+                      </view>
+                  </view>
+                </view>
+            </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -91,102 +114,129 @@ export default {
 </script>
 
 <style>
-.container {
-  flex: 1;
-  width: 100%;
-  background-color: #f2f2f2;
-  align-items: center;
-}
-.card-container{
+
+.main{
+    padding: 10px;
     width: 100%;
-    height: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-.clickable-container{
-    width: 95%;
-    height: 15%;
-    margin-top: 1.7%;
-}
-.card-header-container{
-    width: 100%;
-    height: 43%;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-.text-color-primary {
-  color: blue;
-  font-size: 30;
+    background-color: green;
+    height: 100px;
 }
 .avatar{
-    height: 130px;
-    width: 130px;
+    height: 140px;
+    width: 140px;
     border-radius: 100;
-    background-color: rgba(245, 255, 226, 0.322);
+    background-color: white;
     overflow: hidden;
 }
-.background{
-    flex: 1;
-    width: 100%;
+.avatar-boarder{
+    height: 150px;
+    width: 150px;
+    border-radius: 100;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    margin-top: -70px;
 }
-.info{
+.avatar-container{
     align-items: center;
+    background-color: white;
 }
-.info-text-name{
-    font-size: 24px;
-    color: white;
+.name-text{
+    font-size: 20px;
     font-weight: bold;
+    padding: 10px;
+}
+.email-text{
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.about-header{
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+}
+.about-text{
+    text-align: justify;
+}
+.about-section{
+    display: flex;
+    padding: 15px;
+    width: 90%;
+    border-top-color: #c4c4c4;
+    border-top-width: 1px;
+    border-bottom-color: #c4c4c4;
+    border-bottom-width: 1px;
+    border-left-color: #c4c4c4;
+    border-left-width: 1px;
+    border-right-color: #c4c4c4;
+    border-right-width: 1px;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+.line{
+    width: 90%;
+    height: 3px;
+    background-color: green;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.info-header-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.info-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .info-text{
-    font-size: 15px;
-    color: white;
-}
-.section{
-    flex: 0.15;
-    width: 90%;
-    margin-top: 10px;
-    align-items: center;
-    flex-direction: row;
-}
-.icon{
-    width: 30px;
-    height: 30px;
-    margin: 15px;
-}
-
-.content{
-    width: 90%;
-    height: 35px;
-    flex-direction: column;
-}
-.content-header{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
 }
-.content-detail{
-    font-size: 15px;
+.plus-icon{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
 }
-.about{
-    justify-content: center;
-    flex-direction: column;
-    flex:0.15;
+.info-detail{
+    margin-top: 10px;
+    padding: 15px;
+    border-top-color: #c4c4c4;
+    border-top-width: 1px;
+    border-bottom-color: #c4c4c4;
+    border-bottom-width: 1px;
+    border-left-color: #c4c4c4;
+    border-left-width: 1px;
+    border-right-color: #c4c4c4;
+    border-right-width: 1px;
+    background-color: #f4f4f4;
+}
+.info-container{
     width: 100%;
-    background-color: rgba(202, 236, 224, 0.651);
+    align-items: center;
+    background-color: white;
 }
-.about-content{
+.skill-tag-container{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.skill-tag{
+    background-color: green;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tag-text{
     color: white;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
-}
-
-.sections-container{
-    flex:0.5;
+    font-weight: bold;
 }
 </style>
