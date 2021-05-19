@@ -4,30 +4,51 @@
       <Header @drawer="openDrawer" :title="title"></Header>
     </view>
     <image-background
+
       :source="require('../assets/background.png')"
       class="background"
     >
-      <image class="avatar" :source="require('../assets/ww.png')" />
+      <image class="avatar" :source="require('../assets/k9UserAvatar.png')" />
     </image-background>
-    <touchable-opacity class="content">
+    <!-- <touchable-opacity class="content">
       <text class="notification-text"
-        >welcome to the homepage (possible custom graphic)
+        >User data displayed here
       </text>
-    </touchable-opacity>
+    </touchable-opacity> -->
     <scroll-view>
-      <touchable-opacity class="content">
-        <text class="notification-text">posting sections</text>
-      </touchable-opacity>
-      <touchable-opacity class="content">
-        <text class="notification-text">posting section</text>
-      </touchable-opacity>
+         
+    <touchable-opacity>
+      <view class ="header-container">
+        <image class="icon" :source="require('../assets/user.png')" />
+        <view class="title-container">
+          <text class="header-title">K9 user</text>
+        </view>
+      </view>
+      <view class ="content">
+        <image :source ="require('../assets/dogForPost.png')" />
+      </view>
+    </touchable-opacity>
+
+  
+
+
+      <touchable-opacity>
+          <view class ="header-container">
+        <image class="icon" :source="require('../assets/user.png')" />
+        <view class="title-container">
+          <text class="header-title">k9 user</text>
+        </view>
+      </view>
+        <view class="container">
+        <image :source ="require('../assets/dogForPost2.png')" />
+        </view>
+      </touchable-opacity>  
     </scroll-view>
     <view class="bottomBar"></view>
   </view>
 </template>
 
 <script>
-import Header from "../components/header";
 import React from "react";
 import {
   ImageBackground,
@@ -37,6 +58,7 @@ import {
   Text,
 } from "react-native";
 import { Card } from "react-native-paper";
+import Header from './header.vue';
 export default {
   props: {
     navigation: { type: Object },
@@ -72,8 +94,8 @@ export default {
 }
 .content {
   border-bottom-width: 1;
-  border-color: #d9d9d9;
-  padding: 75;
+  border-color:green;
+  padding: 25;
   align-items: center;
 }
 .homePage-text {
@@ -98,5 +120,27 @@ export default {
   border-radius: 100;
   background-color: rgba(245, 255, 226, 0.322);
   overflow: hidden;
+}
+.header-container {
+  width: 100%;
+  padding-top: 2%;
+  align-items: center;
+  flex-direction: row;
+  background-color: green;
+}
+.icon {
+  width: 32px;
+  height: 32px;
+  margin: 5px;
+}
+.title-container{
+    flex: 1;
+    align-items: center ;
+    margin-right: 35px;
+}
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #F1C40F;
 }
 </style>

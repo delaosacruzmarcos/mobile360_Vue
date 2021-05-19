@@ -46,11 +46,7 @@ export default {
      deletePost: Function,
      cancelEdit: Function,
      toggleLikedStatus: Function,
-     editPressed: Function
- },
- methods: {
-     editIconPress: function() {
-         this.editPressed(this.selectedIndex)
+         this:editPressed(this.selectedIndex)
      },
      checkIconPress: function() {
          if(this.editedPost !== '')
@@ -70,7 +66,7 @@ export default {
          this.deletePost(this.selectedIndex)
      },
     }
-}
+
 
 </script>
 

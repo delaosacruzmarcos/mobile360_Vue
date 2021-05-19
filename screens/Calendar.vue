@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import React from "react";
+import React from "react"
 import { Avatar, Card } from "react-native-paper";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 import { Agenda } from "react-native-calendars";
