@@ -8,6 +8,7 @@
       :source="require('../assets/background.png')"
       class="background"
     >
+    <!-- load user profile picture from database and display -->
       <image class="avatar" :source="require('../assets/k9UserAvatar.png')" />
     </image-background>
     <!-- <touchable-opacity class="content">
@@ -16,7 +17,7 @@
       </text>
     </touchable-opacity> -->
     <scroll-view>
-         
+    <!-- load list of friends' posts from database and display as the following format -->
     <touchable-opacity>
       <view class ="header-container">
         <image class="icon" :source="require('../assets/user.png')" />

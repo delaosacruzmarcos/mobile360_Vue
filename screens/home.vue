@@ -1,4 +1,5 @@
 <template>
+<!-- we are currently applying the home screen from the components folder, not this one -->
 <!-- header here -->
 <view>
     <header>

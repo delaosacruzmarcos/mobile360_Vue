@@ -1,8 +1,8 @@
 <template>
   <view :style="{ flex: 1, alignItems:'center'}">
     <Header @drawer="openDrawer" :title="title"></Header>
-    <!-- <text>{{CurrentDate}}</text> -->
     <view class="calendar-container">
+      <!-- load events for each month from the database and use the loadItemsForMonth function to load the events on the agenda -->
     <agenda
       v-bind:items="items"
       :loadItemsForMonth="loadItems"

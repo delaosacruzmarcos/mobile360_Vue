@@ -8,6 +8,8 @@
       <text>Password</text>
     </view>
     <text-input class="textField" v-model="password" />
+    <!-- when the sign in button is clicked, check the database whether the user account exist or not, password correct or not, or the empty input field
+    provide userful feedback to the user if sign in was not successful -->
     <button
       :on-press="signIn"
       title="Sign in"

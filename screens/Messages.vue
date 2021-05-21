@@ -1,6 +1,7 @@
 <template>
   <view>
     <Header @drawer="openDrawer" :title="title"></Header>
+    <!-- load messages between the current user and friends and display as flat-list -->
     <flat-list
       :data="Messages"
       :keyExtractor="(item) => item.id"

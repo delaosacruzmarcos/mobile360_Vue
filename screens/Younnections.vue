@@ -6,6 +6,7 @@
         <text class="header">Younnections Manager</text>
       </view>
       <view class="manager-group">
+        <!-- load numbers of each section from database and display in the following format -->
         <touchable-opacity class="sections">
           <text class="manager-text">Connections</text>
           <text class="manager-text">101</text>
@@ -25,6 +26,7 @@
         <text class="header">Requests from younnectors</text>
       </view>
       <scroll-view>
+        <!-- load friends request from database and display in the following format -->
       <view class="request">
         <view class="person">
           <text class="request-person">Chin Ya Russell</text>
@@ -33,6 +35,7 @@
           >
         </view>
         <view class="btns">
+          <!-- change friends status in the database based on Younnect or Youject -->
           <touchable-opacity class="accept"
             ><text class="accept-text">Younnect</text></touchable-opacity
           >

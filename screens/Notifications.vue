@@ -5,6 +5,7 @@
       <view class="header-container">
         <text class="header">Network Notifications</text>
       </view>
+      <!-- load network notifications from database and display in the following format and wrap around with scroll-view  -->
       <view class="empty-content-container">
         <text class="notification-text"> No new notifications </text>
       </view>
@@ -14,6 +15,7 @@
       <view class="header-container">
         <text class="header">Younnection Notifications</text>
       </view>
+      <!-- load younnection notifications from database and display in the following format -->
       <scroll-view>
         <touchable-opacity class="content">
           <text class="notification-text"
@@ -45,6 +47,7 @@
       <view class="header-container">
         <text class="header">Message Notifications</text>
       </view>
+      <!-- load message notifications from database and display in the following format -->
       <scroll-view>
         <touchable-opacity class="content">
           <text class="notification-text">Message from Chin Ya Russell</text>

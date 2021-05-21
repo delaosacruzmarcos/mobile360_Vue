@@ -3,11 +3,14 @@
       <Header @drawer="openDrawer" :title="title"></Header>
         <view class="main"></view>
           <view class="avatar-container">
+              <!-- Click to let user upload new profile picture and update the profile picture in the database -->
               <touchable-opacity>
                 <view class="avatar-boarder">
+                    <!-- load user profile picture from database and display -->
                     <image class="avatar" :source="require('../assets/icons8-user-male-500.png')"/>
                 </view>
               </touchable-opacity>
+              <!-- load user infomation(name,email,about paragraph) from database and display  -->
               <text class="name-text">Bhargav Koritala</text>
               <text class="email-text">bhargavK@example.com</text>
               <view class="about-section">
@@ -20,10 +23,12 @@
               <view class="info-header-container">
                   <view class="info-header">
                       <text class="info-text">Education</text>
+                      <!-- create a form to get user input and update the schools in the database -->
                       <touchable-opacity>
                       <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
                       </touchable-opacity>
                   </view>
+                  <!-- load list of attended schools from database and display in the following format -->
                   <view class="info-detail">
                       <text class="school-name">University at Buffalo</text>
                       <text class="degree">Master's</text>
@@ -41,10 +46,12 @@
                 <view class="info-header-container">
                   <view class="info-header">
                       <text class="info-text">Work Experience</text>
+                      <!-- create a form to get user input and update the work experience in the database -->
                       <touchable-opacity>
                       <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
                       </touchable-opacity>
                   </view>
+                  <!-- load list of work experience from database and display in the following format -->
                   <view class="info-detail">
                       <text class="company-name">Atwick Inc.</text>
                       <text class="job-title">Full Stack Developer Intern</text>
@@ -56,10 +63,12 @@
                 <view class="info-header-container">
                   <view class="info-header">
                       <text class="info-text">Skills</text>
+                      <!-- create a form to get user input and update the skills in the database -->
                       <touchable-opacity>
                       <image class="plus-icon" :source="require('../assets/icons8-plus-96.png')"/>
                       </touchable-opacity>
                   </view>
+                  <!-- load list of skills from database and display in the following format -->
                   <view class="skill-tag-container">
                       <view class="skill-tag">
                           <text class="tag-text">HTML</text>

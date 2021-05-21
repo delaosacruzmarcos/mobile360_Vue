@@ -1,5 +1,6 @@
 <template>
   <View class="container">
+    <!-- store the user input to database, give feedback to user if any field was empty or any input was in incorrect format -->
     <view>
       <text>First Name</text>
     </view>
